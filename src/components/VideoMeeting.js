@@ -379,12 +379,13 @@ function VideoMeeting() {
                             placeholder="내 대화명"
                             value={username}
                             id="username"
+                            readOnly
                             onKeyPress={(e) => {
                               if (e.key === "Enter") checkEnter(e.target, e);
                             }}
                         />
                         <span className="input-group-btn">
-                        <button className="btn btn-success" autoComplete="off" id="register">
+                        <button className="btn btn-primary" autoComplete="off" id="register">
                           대화방 참여
                         </button>
                       </span>
