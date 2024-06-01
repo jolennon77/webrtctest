@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 
 function Login() {
     const [username, setUsername] = useState('');
@@ -20,38 +19,42 @@ function Login() {
     };
 
     return (
-        <Container>
-            <Row className="justify-content-md-center">
-                <Col md="4">
+        <div className="container">
+            <div className="row">
+                <div className="col-md-4 col-md-offset-4">
                     <h2 className="text-center">Login</h2>
-                    <Form>
-                        <Form.Group controlId="formUsername">
-                            <Form.Label>Username</Form.Label>
-                            <Form.Control
+                    <form>
+                        <div className="form-group">
+                            <label htmlFor="formUsername">Username</label>
+                            <input
                                 type="text"
+                                className="form-control"
+                                id="formUsername"
                                 placeholder="Enter username"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                             />
-                        </Form.Group>
+                        </div>
 
-                        <Form.Group controlId="formPassword" className="mt-3">
-                            <Form.Label>Password</Form.Label>
-                            <Form.Control
+                        <div className="form-group mt-3">
+                            <label htmlFor="formPassword">Password</label>
+                            <input
                                 type="password"
+                                className="form-control"
+                                id="formPassword"
                                 placeholder="Password"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                             />
-                        </Form.Group>
+                        </div>
 
-                        <Button variant="primary" className="mt-3" onClick={handleLogin}>
+                        <button type="button" className="btn btn-primary mt-3 center-block" onClick={handleLogin}>
                             Login
-                        </Button>
-                    </Form>
-                </Col>
-            </Row>
-        </Container>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     );
 }
 
